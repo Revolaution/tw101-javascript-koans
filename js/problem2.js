@@ -58,7 +58,6 @@ function isTrafficJam(numberOfAutoRickshaws, isAfterEightPm) {
     else
         answer = "a";
     changeElementText("#beforeOrAfter", "before");
-
     changeElementText("#aOrNo", answer);
 }
 

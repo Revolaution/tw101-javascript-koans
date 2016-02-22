@@ -38,14 +38,21 @@ function changeElementText(element, answer) {
     $(element).text(answer);
 }
 
+function calculateStandardFare(distanceTraveled, timeWaiting){
+    return 20 + 8 * (distanceTraveled - 1) + 4 * timeWaiting;
+}
 function fareForRide(distanceTraveled, timeWaiting, isNight) {
-    changeElementText("#distanceTraveled", "some");
-    changeElementText("#timeWaiting", "some");
-    changeElementText("#nightOrDay", "night or day");
-    var fare = "some amount";
+    changeElementText("#distanceTraveled", distanceTraveled);
+    changeElementText("#timeWaiting", timeWaiting);
+    var fare = calculateStandardFare(distanceTraveled, timeWaiting);
+    if (isNight == true){
+        changeElementText("#nightOrDay", "night");
+        changeElementText("#fare", fare * 1.5);
+        }
+    else {
+        changeElementText("#nightOrDay", "day");
+        changeElementText("#fare", fare);
+        }
 
-    // write some code here!
-
-    changeElementText("#fare", fare);
 }
 
