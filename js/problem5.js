@@ -47,7 +47,7 @@ function urduCorrector(nestedArrayAdvertisement){
     var unedited = ""
     for (var i = 0; i < nestedArrayAdvertisement.length; i++){
         unedited += nestedArrayAdvertisement[i].join(", ");
-        unedited += "\n";
+        unedited += ". ";
     }
     changeElementText("#unedited", unedited);
 }
