@@ -36,18 +36,32 @@
 // Write your JavaScript here
 
 //changeElementText("#edited", edited);
-//changeElementText("#count", count);
 
-//        for (var j = 0; j < nestedArrayAdvertisement[i].length; j++){
-//            unedited += (nestedArrayAdvertisement[i][j] + " ")
-//            console.log(unedited);
-//        }
+function joinAdLanguages(nestedArrayAdvertisement){
+    var ad = "";
+        for (var i = 0; i < nestedArrayAdvertisement.length; i++){
+            ad += nestedArrayAdvertisement[i].join(" ");
+            ad += ". ";
+            //should be \n for unedited but doesn't show up as a newline in html
+        }
+    return ad;
+}
 
-function urduCorrector(nestedArrayAdvertisement){
-    var unedited = ""
+function countTotalWords(nestedArrayAdvertisement){
+    var count = 0;
     for (var i = 0; i < nestedArrayAdvertisement.length; i++){
-        unedited += nestedArrayAdvertisement[i].join(", ");
-        unedited += ". ";
-    }
+            count += nestedArrayAdvertisement[i].length
+        }
+    return count;
+}
+function urduCorrector(nestedArrayAdvertisement){
+    var unedited = joinAdLanguages(nestedArrayAdvertisement);
     changeElementText("#unedited", unedited);
+
+    nestedArrayAdvertisement[1].reverse();
+    var edited = joinAdLanguages(nestedArrayAdvertisement);
+    changeElementText("#edited", edited);
+
+    var count = countTotalWords(nestedArrayAdvertisement);
+    changeElementText("#count", count);
 }
