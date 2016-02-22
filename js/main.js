@@ -13,6 +13,10 @@ $(document).ready(function() {
     totalCurrency(20, 50, 10, 20, 13, 500);
 
     // Problem 5
-    // call your problem 5 code here
+    urduCorrector( [
+                       ["zara", "dhyaan", "dein"],
+                       ["mazarat", "chahenge"],
+                       ["attention", "please"]
+                   ])
 
 });

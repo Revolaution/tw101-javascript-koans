@@ -34,3 +34,20 @@
  */
 
 // Write your JavaScript here
+
+//changeElementText("#edited", edited);
+//changeElementText("#count", count);
+
+//        for (var j = 0; j < nestedArrayAdvertisement[i].length; j++){
+//            unedited += (nestedArrayAdvertisement[i][j] + " ")
+//            console.log(unedited);
+//        }
+
+function urduCorrector(nestedArrayAdvertisement){
+    var unedited = ""
+    for (var i = 0; i < nestedArrayAdvertisement.length; i++){
+        unedited += nestedArrayAdvertisement[i].join(", ");
+        unedited += "\n";
+    }
+    changeElementText("#unedited", unedited);
+}
