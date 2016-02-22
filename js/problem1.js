@@ -1,4 +1,4 @@
-"use strict";
+//o"use strict";
 
 /*
  Problem 1
@@ -29,6 +29,15 @@ function kiteGame(numberOfKites) {
     var answer = "";
 
     // write some code here!
-
+    for(var num = 1; num <= numberOfKites; num++){
+        if (num % 15 == 0)
+            answer += " Peche! Ipo kaate!";
+        else if (num % 5 == 0)
+            answer += " Ipo kaate!";
+        else if (num % 3 == 0)
+            answer += " Peche!";
+        else
+            answer += (" "+ num);
+    }
     changeElementText("#answer", answer);
 }
