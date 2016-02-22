@@ -31,6 +31,9 @@
  When I check to see if there is a traffic jam.
  Then no traffic jam is predicted
 
+num rickshaws < 40 && not after 8pm -> no traffic jams
+num rickshaws > 40 && not after 8pm -> traffic jams
+num rickshaws > 40 && after 8pm -> no traffic jams
  */
 
 
@@ -38,12 +41,23 @@ function changeElementText(element, answer) {
     $(element).text(answer);
 }
 
+
 function isTrafficJam(numberOfAutoRickshaws, isAfterEightPm) {
-    changeElementText("#numberOfRickshaws", "some");
-    changeElementText("#beforeOrAfter", "before or after");
+//    changeElementText("#numberOfRickshaws", "some");
+    changeElementText("#numberOfRickshaws", numberOfAutoRickshaws);
+
+//    changeElementText("#beforeOrAfter", "before or after");
+
     var answer = "maybe a";
 
-    // write some code here!
+    if (isAfterEightPm == true){
+        changeElementText("#beforeOrAfter", "after");
+        answer = "no"}
+    else if (numberOfAutoRickshaws <= 40){
+        answer = "no"}
+    else
+        answer = "a";
+    changeElementText("#beforeOrAfter", "before");
 
     changeElementText("#aOrNo", answer);
 }
