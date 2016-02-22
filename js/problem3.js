@@ -41,6 +41,7 @@ function changeElementText(element, answer) {
 function calculateStandardFare(distanceTraveled, timeWaiting){
     return 20 + 8 * (distanceTraveled - 1) + 4 * timeWaiting;
 }
+
 function fareForRide(distanceTraveled, timeWaiting, isNight) {
     changeElementText("#distanceTraveled", distanceTraveled);
     changeElementText("#timeWaiting", timeWaiting);
