@@ -27,3 +27,29 @@
 */
 
 // Write your JavaScript here
+
+const CURRENCY_NOTES = [5, 10, 20, 50, 100, 500, 1000];
+
+
+
+function totalCurrency(){
+   var notes = arguments[0];
+   for (var i = 1; i < arguments.length; i++){
+       notes += (", " + arguments[i] + " ");
+   }
+   changeElementText("#notes", notes);
+
+
+
+   var total = 0;
+   for (var i = 0; i < arguments.length; i++){
+        if (CURRENCY_NOTES.includes(arguments[i])){
+            total += arguments[i];
+        }
+        else {
+            break;
+        }
+   }
+   changeElementText("#total", total);
+
+}
