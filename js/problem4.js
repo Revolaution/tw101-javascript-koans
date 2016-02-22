@@ -30,16 +30,16 @@
 
 const CURRENCY_NOTES = [5, 10, 20, 50, 100, 500, 1000];
 
-
-
-function totalCurrency(){
-   var notes = arguments[0];
-   for (var i = 1; i < arguments.length; i++){
-       notes += (", " + arguments[i] + " ");
+function addNotes(){
+   var notes = arguments[0][0];
+   for (var i = 1; i < arguments[0].length; i++){
+      notes += (", " + arguments[0][i] + " ");
    }
    changeElementText("#notes", notes);
+}
 
-
+function totalCurrency(){
+   addNotes(arguments);
 
    var total = 0;
    for (var i = 0; i < arguments.length; i++){
